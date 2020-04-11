@@ -7,52 +7,10 @@
 </head>
 <body>
     <div style="width: 400px; height: 400px;">
-     <canvas id="myChart" width="400" height="400"></canvas>
+         <canvas id="myChart" width="400" height="400" aria-label="Gráfico exemplo" role="img"></canvas>
     </div>
-    <script src="/chart.js/dist/Chart.js"></script>
-     <script>
-               let datas = [10,20,30,15,20,60]
-               let typeChart = 'pie'
-               let ctx = document.getElementById('myChart').getContext('2d')
 
-               let chart = new Chart(ctx,{
-                   /*o tipo pode ser line para linear,pie redondo e bar para barras*/
-                   type: typeChart,
-                   data: {
-                       labels:["Jan","Feb","Mar","Apr","May","Jun"],
-                       datasets:[
-                           {
-                               label: '# of Sales',
-                               data: datas,
-                               backgroundColor:[
-                                   '#000',
-                                   '#fff',
-                                   '#ccc'
-                               ],
-                               borderColor:[
-                                   '#fff',
-                                   '#ccc'
-                               ],
-                               borderWidth: 1
-                           }
-                       ]
-                   },
-                   options:{
-                     title:{
-                         text: 'titulo',
-                         display:true
-                     },
-                     scales:{
-                       yAxes:[
-                           {
-                               ticks:{
-                                   beginAtZero: true
-                               }
-                           }
-                       ]
-                     }
-                   }
-               })
-     </script>
+    <script src="/chart.js/dist/Chart.js"></script>
+    <script src="/graphic.js"></script>
 </body>
 </html>
