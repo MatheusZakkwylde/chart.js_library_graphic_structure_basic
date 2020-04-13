@@ -13,22 +13,53 @@ Biblioteca chart.js em javascript para construção de gráficos simples com fac
 
     Utilizando-se da chamada local da biblioteca e o script definimos as seguintes informações:
     
-- Dados a serem armazenados no gráfico. Utilize de ajax para alimentar ou user o array do exemplo.
-let datas = [10,20,30,15,20,60] 
+- **let datas = [10,20,30,15,20,60]** - Dados a serem armazenados no gráfico. Utilize de ajax para alimentar ou user o array do exemplo;
+- **let label = ["Jan","Feb","Mar","Apr","May","Jun"]** - Titulos de cada valor. Utilize de ajax para alimentar ou exemplo de array;
+- **let typeChart = 'bar'** - O tipo do gráfico pode ser line para linear,pie redondo e bar para barras. Teste todos para sua utilidade;
+- **let title = "Gráfico exemplo de biblioteca"** - Titulo do gráfico;
+- **let ctx = document.getElementById('myChart').getContext('2d')** - Pegando o id do canvas para usar o gráfico e pelo método getContext como 2D.
 
--Titulos de cada valor. Utilize de ajax para alimentar ou exemplo de array.
-let label = ["Jan","Feb","Mar","Apr","May","Jun"] 
+let chart = new Chart(ctx, { //Criação do objeto Chart 
+  
+    type: typeChart, //Recebe o tipo de chart.
+    data: {
+        labels:label, //O nome de cada barra.
 
--O tipo de gráfico pode ser line para linear,pie redondo e bar para barras. Teste todos para sua utilidade.
-let typeChart = 'bar' 
+        datasets:[
+            {
+                label: '# of Sales',
+                data: datas,//Dados de cada barra.
+                backgroundColor:[ //Definição de cores de cada barra.
+                    '#000',
+                    '#fff',
+                    '#ccc'
+                ],
+                borderColor:[ //Definição de cada borda de cada barra.
+                    '#fff',
+                    '#ccc'
+                ],
+                borderWidth: 1 //Tamanho da borda.
+            }
+        ]
+    },
 
-- Titulo do gráfico.
-let title = "Gráfico exemplo de biblioteca" 
+    options:{
+      title:{
+          text: title, //Titulo princial do chart.
+          display:true
+      },
+      
+      scales:{
+        yAxes:[
+            {
+                ticks:{
+                    beginAtZero: true //Definição do do eixo y começando de zero.
+                }
+            }
+        ]
+      }
+    }
+})
 
--Pegando o id do canvas para usar o gráfico e pelo método getContext como 2D.
-let ctx = document.getElementById('myChart').getContext('2d') 
-
--Define uma variável para receber o objeto new Chart passando o id pegado método getElementById() do javascript.
-
-
+**Site oficial link :** < https://www.chartjs.org >
 
