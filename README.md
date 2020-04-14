@@ -1,6 +1,8 @@
 # chart.js_library_graphic_structure_basic
 Biblioteca chart.js em javascript para construção de gráficos simples com facilidade de uso. Consulte a documentação. Status (Funcionando)
 
+Requisitos: Conhecimento de javascript, css básico, o que é um objeto, array ou json conceitos.
+
 1 - A biblioteca pode ser usada localmente ou usando o CDN no site oficial link : < https://www.chartjs.org> utilizando-se da tag canvas do html5 para a construção de gráficos:
 
 
